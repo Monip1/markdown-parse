@@ -11,19 +11,27 @@ public class MarkdownParse {
         // the next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
-            System.out.println(currentIndex);
+            // System.out.println(currentIndex);
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-            if(nextOpenBracket == 0){
+            
+            if(nextOpenBracket < 0 || nextCloseBracket < 0 || openParen < 0 || closeParen < 0){
+                break;
+            }
+            else if(nextOpenBracket == 0){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
                 // System.out.println(currentIndex);
             }
-            else{
-                
+            else if(!markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")){
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+                currentIndex = closeParen + 1;
+                // System.out.println(currentIndex);
             }
+            currentIndex = closeParen + 1;
+            // System.out.println(currentIndex);
         }
         return toReturn;
     }
@@ -34,3 +42,10 @@ public class MarkdownParse {
         System.out.println(links);
     }
 }
+
+
+/**
+ * possible probs
+ * 1. ")" inside a link     not possible
+ * 2. []
+ */
