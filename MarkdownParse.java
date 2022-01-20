@@ -20,6 +20,10 @@ public class MarkdownParse {
             if(nextOpenBracket < 0 || nextCloseBracket < 0 || openParen < 0 || closeParen < 0){
                 break;
             }
+            else if(openParen - 1 != nextCloseBracket){
+                nextOpenBracket = markdown.indexOf("[", nextOpenBracket);
+                nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+            }
             else if(nextOpenBracket == 0){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
