@@ -1,10 +1,7 @@
 # CODING IS FUN
 
 [my link](https://www.homedepot.com/)
-Hiiiiii
-[]
-[] [] [] []
-
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 [also mine](https://theforum.ticketsoffice.org/)
 

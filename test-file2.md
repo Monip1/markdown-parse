@@ -2,8 +2,6 @@
 
 [my link](https://www.homedepot.com/)
 Hiiiiii
-[]
-[] [] [] []
 
 
 [also mine](https://theforum.ticketsoffice.org/)
