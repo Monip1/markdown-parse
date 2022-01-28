@@ -17,8 +17,17 @@ public class MarkdownParseTest {
     @Test
     public void links()  throws IOException{
         assertEquals(MarkdownParse.getLinks("test-file.md"), List.of("https://something.com", "some-page.html"));
+    }
+    @Test
+    public void links2()  throws IOException{
         assertEquals(MarkdownParse.getLinks("test-file2.md"), List.of("https://www.homedepot.com/", "https://theforum.ticketsoffice.org/"));
+    }
+    @Test
+    public void links3()  throws IOException{
         assertEquals(MarkdownParse.getLinks("test-file3.md"), List.of("https://www.homedepot.com/", "https://theforum.ticketsoffice.org/"));
+    }
+    @Test
+    public void links4()  throws IOException{
         assertEquals(MarkdownParse.getLinks("test-file4.md"), List.of("https://www.homedepot.com/", "https://theforum.ticketsoffice.org/"));
     }
 }
